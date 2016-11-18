@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js" ></script>
+	</head>
+	<body>
+		<div class="clickAdd"><input type="button" value="按钮"></div>
+		<br />
+		<br />
+		<br />
+        <span class="clickCon">在我的左边添加了一段话，这段话是：</span>
+        <script type="text/javascript">
+            $(function(){
+                //动态添加事件
+                $(".clickAdd").on("click",function(){
+                    console.log("追加了内容");
+                    $(".clickCon").append('<span class="delete">点击我可以删除我，来试试！</span>');
+                });
+                //对动态添加的元素添加事件-删除
+                $(".clickCon").on("click",".delete",function(){
+                    console.log("内容删除成功");
+                    $(this).remove();
+                });
+            }); 
+        </script>
+	</body>
+</html>
